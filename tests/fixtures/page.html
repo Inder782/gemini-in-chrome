@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><title>Fixture page</title></head>
+<body style="font-family: sans-serif">
+  <h1>Fixture page</h1>
+  <button id="count" onclick="this.dataset.n = (+this.dataset.n || 0) + 1; this.textContent = 'Clicked ' + this.dataset.n">Click me</button>
+  <p><label for="name">Your name</label> <input id="name" placeholder="type here"></p>
+  <form onsubmit="document.title = 'submitted ' + document.getElementById('q').value; return false;">
+    <input id="q" aria-label="Search box"> <button type="submit">Go</button>
+  </form>
+  <div id="editor" contenteditable="true" role="textbox" aria-label="Editor" style="border:1px solid #888;min-height:30px">hello</div>
+  <div id="host"></div>
+  <p><a id="elsewhere" href="#">Link to another site</a></p>
+  <div style="height: 2400px"></div>
+  <button id="bottom">Bottom button</button>
+  <script>
+    const host = document.getElementById('host');
+    const root = host.attachShadow({mode: 'open'});
+    const b = document.createElement('button');
+    b.textContent = 'Shadow upload';
+    b.onclick = () => {
+      const i = document.createElement('input');
+      i.type = 'file';
+      i.onchange = () => { document.title = 'got ' + i.files[0].name; };
+      i.click();
+    };
+    root.appendChild(b);
+    document.getElementById('elsewhere').href = location.href.replace('127.0.0.1', 'localhost').replace('page.html', 'other.html');
+  </script>
+</body>
+</html>
