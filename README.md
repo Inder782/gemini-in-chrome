@@ -127,8 +127,8 @@ prints a ready-to-paste `mcpServers` block (Gemini CLI, Claude Code, and others)
 
 ## Status
 
-Early (0.1). Tested with Windows 11, Chrome 157 and `agy`. macOS and Linux paths are implemented but not yet tested by the
-author, reports are very welcome. See [CONTRIBUTING.md](CONTRIBUTING.md).
+Early (0.1). Used day to day on Windows 11 with Chrome 157 and `agy`. The test suite (34 tests, headless Chrome) runs in CI on
+Windows and Ubuntu. macOS is implemented but not yet tested, reports are very welcome. See [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ## FAQ
 
